@@ -17,7 +17,7 @@
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->
@@ -35,14 +35,14 @@
                     <i class="fas fa-chart-line"></i>
                     <span>Niveau</span>
                 </a>
-                <a href="index.php?page=classe">
+                <a href="index.php?page=listclasse">
                     <div class="menu-item">
                         <i class="fas fa-comment"></i>
                         <span>Classe</span>
                     </div>
                 </a>
 
-                <a href="index.php?page=etudiant" class="menu-item">
+                <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
                     <span>Etudiant</span>
                 </a>
@@ -80,9 +80,8 @@
 
                         <h2>Liste des Etudiants</h2>
                         <form action="index.php" class="Filtres" method="get">
-                            <input type="hidden" name="page" value="listetudiant">
-                            <input type="number" placeholder="Rechercher une classe par son  Id" name="id" value="<?=$_REQUEST["id"] ?? ""?>">
-                            <button class="btfiltre" type="submit">Filtres</button>
+                            <input type="hidden" name="page" value="etudiant">
+                            <button class="btfiltre" type="submit">Ajouter</button>
                         </form>
                        
 
@@ -98,6 +97,7 @@
                                 <th>Classe</th>
                                 <th>Action</th>
                             </thead>
+                            <tbody>
                             <?php foreach ($etudiants as $etudiant): ?>
                                 <tr>
                                     <td><?= $etudiant["matricule"] ?></td>
@@ -132,6 +132,7 @@
 
                                 </tr>
                             <?php endforeach; ?>
+                            </tbody>
 
 
 

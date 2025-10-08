@@ -20,7 +20,7 @@ require_once("fonction.php");
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->
@@ -38,13 +38,13 @@ require_once("fonction.php");
                     <i class="fas fa-chart-line"></i>
                     <span>Niveau</span>
                 </a>
-                <a href="index.php?page=classe">
+                <a href="index.php?page=listclasse">
                     <div class="menu-item">
                         <i class="fas fa-comment"></i>
                         <span>Classe</span>
                     </div>
                 </a>
-                <a href="index.php?page=etudiant" class="menu-item">
+                <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
                     <span>Etudiant</span>
                 </a>
@@ -84,26 +84,34 @@ require_once("fonction.php");
 
                             <!-- Cartes récapitulatives -->
                             <div class="cards">
+                                <a href="index.php?page=listetudiant">
                                 <div class="card">
                                     <i class="fas fa-user-graduate icon"></i>
                                     <h3>Étudiants</h3>
                                     <p><?=getNombreEtudiants();?></p>
                                 </div>
+                                </a>
+                                <a href="index.php?page=listclasse">
                                 <div class="card">
                                     <i class="fas fa-chalkboard-teacher icon"></i>
                                     <h3>Classes</h3>
                                     <p><?=getNombreClasses();?></p>
                                 </div>
+                                </a>
+                                <a href="index.php?page=filiere">
                                 <div class="card">
                                     <i class="fas fa-book icon"></i>
                                     <h3>Filières</h3>
                                     <p><?=getNombreFilieres()?></p>
                                 </div>
+                                </a>
+                                <a href="index.php?page=niveau">
                                 <div class="card">
                                     <i class="fas fa-users-cog icon"></i>
                                     <h3>niveaux</h3>
                                     <p><?=getNombreNiveaux();?></p>
                                 </div>
+                                </a>
                             </div>
                         </main>
 

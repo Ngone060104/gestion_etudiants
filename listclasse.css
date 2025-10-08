@@ -47,9 +47,9 @@
 }
 
 .logo-img {
-    width: 200px;
+    width: 50px;
     /* ajuste selon ton logo */
-    margin-top: -20%;
+    border-radius: 50%;
 }
 
 /* Menu principal centré */
@@ -61,7 +61,7 @@
     justify-content: center;
     /* centré verticalement */
     gap: 05px;
-    margin-top: -90%;
+    margin-top: -70%;
 
 }
 
@@ -80,7 +80,7 @@
     gap: 10px;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 10px;
     border-radius: 8px;
     cursor: pointer;
@@ -201,7 +201,6 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 95%;
     margin: 10px auto;
-    font-family: Arial, sans-serif;
     height: 70vh;
 }
 
@@ -213,9 +212,12 @@ form {
 }
 
 .btfiltre {
-    background-color: brown;
+    background-color: #007bff;
     color: white;
     border: 1px solid white;
+    padding: 08px;
+    border-radius: 50px;
+    width: 10%;
 }
 
 .card-list h2 {
@@ -223,87 +225,74 @@ form {
     color: #333;
 }
 
-.mod {
-    background-color: #2ecc71;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-}
-.mod:hover{
-     background-color:  #27ae60;
-}
-
-.sup {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.sup:hover{
-     background-color:  #c0392b;
-}
-
-.list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 15px;
-}
-
-.class-card {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-}
-
-.class-card h3 {
-    margin: 0 0 10px 0;
-    color: black;
-}
-
-.class-card p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: black;
-}
-
-.class-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.class-card {
-    /* background: url("https://picsum.photos/300/200") no-repeat center center;
-    background-size: cover; */
-    background-color: white;
+.table-container {
+    width: 95%;
+    margin: 20px auto;
+    overflow-x: auto;
+    background-color: #fff;
     padding: 15px;
     border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #007bff;
     color: white;
-    /* Pour que le texte soit lisible */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    min-height: 150px;
 }
 
-
-.class-card h3,
-.class-card p {
-    position: relative;
-    z-index: 1;
+thead th {
+    padding: 10px;
+    text-align: left;
 }
 
-.icone {
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+.actions {
     display: flex;
-    justify-content: space-between;
+    gap: 5px;
+}
 
+.actions form button {
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sup:hover{
+background-color: brown;
+}
+.sup{
+    background-color: rgb(165, 79, 79);
+}
+.mod:hover{
+    background-color: green;
+}
+.mod{
+    background-color: rgba(3, 158, 3, 0.68);
+}
+.view{
+    background-color: black;
 }

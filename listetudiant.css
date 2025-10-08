@@ -47,9 +47,9 @@
 }
 
 .logo-img {
-    width: 200px;
+    width: 50px;
     /* ajuste selon ton logo */
-    margin-top: -20%;
+   border-radius: 50%;
 }
 
 /* Menu principal centré */
@@ -61,7 +61,7 @@
     justify-content: center;
     /* centré verticalement */
     gap: 05px;
-    margin-top: -90%;
+    margin-top: -70%;
 
 }
 
@@ -80,7 +80,7 @@
     gap: 10px;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 10px;
     border-radius: 8px;
     cursor: pointer;
@@ -201,8 +201,8 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 96%;
     margin: 10px auto;
-    font-family: Arial, sans-serif;
     height: 75vh;
+    
 }
 
 .Filtres {
@@ -213,9 +213,12 @@ form {
 }
 
 .btfiltre {
-    background-color: brown;
+    background-color: #007bff;
     color: white;
     border: 1px solid white;
+    width: 10%;
+    border-radius: 50px;
+    padding: 05px;
 }
 
 /*  Conteneur du tableau */
@@ -231,8 +234,7 @@ form {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid  #f8f8f8;
@@ -240,16 +242,18 @@ table {
 
 /* En-têtes */
 th {
-  background-color: brown;
+  background-color:  #007bff;
   color: white;
   padding: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: none;
+   text-align: center;
 }
 
 /* Lignes */
 tr {
-  background-color: #f8f8f8;
+  background-color: white;
 }
 tr:hover {
   background-color: #f1f1f1;
@@ -258,7 +262,7 @@ tr:hover {
 
 td {
   padding: 10px;
-  text-align: center;
+   text-align: center;
   color: #333;
 }
 

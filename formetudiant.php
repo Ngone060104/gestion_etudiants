@@ -42,13 +42,13 @@ if (session_status() == PHP_SESSION_NONE) {
                     <i class="fas fa-chart-line"></i>
                     <span>Niveau</span>
                 </a>
-                <a href="index.php?page=classe">
+                <a href="index.php?page=listclasse">
                     <div class="menu-item">
                         <i class="fas fa-comment"></i>
                         <span>Classe</span>
                     </div>
                 </a>
-                <a href="" class="menu-item">
+                <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
                     <span>Etudiant</span>
                 </a>

@@ -46,7 +46,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <i class="fas fa-comment"></i>
                     <span>Classe</span>
                 </div>
-                <a href="index.php?page=etudiant" class="menu-item">
+                <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
                     <span>Etudiant</span>
                 </a>

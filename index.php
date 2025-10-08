@@ -110,7 +110,7 @@ define("WEBROOT", "http://localhost:8000/");
                 header("Location: index.php?page=niveau");
                 exit;
             }
-            require_once("niveau.php"); // ici tu mets ton HTML avec formulaire + card
+            require_once("niveau.php"); 
         } elseif ($page == "classe") {
             $classes = findAllClasses();
             $filieres = findAllFilieres(); // récupérer toutes les filières
@@ -337,6 +337,7 @@ define("WEBROOT", "http://localhost:8000/");
             }
             require_once("listetudiant.php");
         } elseif ($page == "modifieretudiant") {
+            $idEtudiant = $_REQUEST["id"]; // ID de l'étudiant modifié
             $classes = findAllClasses();
             $niveaux = findAllNiveaux();
             $filieres = findAllFilieres();
@@ -379,15 +380,15 @@ define("WEBROOT", "http://localhost:8000/");
                 if (trim($_REQUEST["telephone"]) == "") {
                     $errorTelephoneEtudiant = "Le telephone est obligatoire";
                     $verification = false;
-                } elseif (existeTelephoneEtudiant($telephone, $etudiants)) {
-                    $errorTelephoneEtudiant = "Ce numero existe déjà";
+                } elseif (existeTelephoneEtudiant($telephone, $etudiants,$idEtudiant)) {
+                    $errorTelephoneEtudiant = "Ce numéro de téléphone est déjà utilisé par un autre étudiant.";
                     $verification = false;
                 }
                 if (trim($_REQUEST["email"]) == "") {
                     $errorEmailEtudiant = "l'email est obligatoire";
                     $verification = false;
-                } elseif (existeEmailEtudiant($email, $etudiants)) {
-                    $errorEmailEtudiant = "Cet email existe déjà";
+                } elseif (existeEmailEtudiant($email, $etudiants,$idEtudiant)) {
+                    $errorEmailEtudiant = "Cet email est déjà utilisé par un autre étudiant.";
                     $verification = false;
                 }
                 if (trim($_REQUEST["adresse"]) == "") {

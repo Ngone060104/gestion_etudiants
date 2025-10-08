@@ -22,7 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="P1">
       <!-- Logo en haut -->
       <div class="top">
-        <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+        <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
       </div>
 
       <!-- Menu principal centré verticalement -->
@@ -40,13 +40,13 @@ if (session_status() == PHP_SESSION_NONE) {
           <i class="fas fa-chart-line"></i>
           <span>Niveau</span>
         </a>
-        <a href="index.php?page=classe">
+        <a href="index.php?page=listclasse">
           <div class="menu-item">
             <i class="fas fa-comment"></i>
             <span>Classe</span>
           </div>
         </a>
-        <a href="index.php?page=etudiant" class="menu-item">
+        <a href="index.php?page=listetudiant" class="menu-item">
           <i class="fa-solid fa-users"></i>
           <span>Etudiant</span>
         </a>
@@ -107,6 +107,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
                  <!-- <a href="<?= WEBROOT ?>?page=dashbord&id=<?= $tache["id"] ?>&supprimer=true"><button name="supprimer">Supprimer</button></a> -->
                   <button class="delete" type="submit" name="delete"><i class="fa-solid fa-trash"></i></button>
+                  <button class="view"><i class="fa-regular fa-eye"></i></button>
                 </form>
               </div>
                <?php endforeach; ?>

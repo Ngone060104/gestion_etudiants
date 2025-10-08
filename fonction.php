@@ -378,18 +378,18 @@ function existelibelleClasse($libelle, $classes) {
     return false; // pas trouvé
 }
 
-function existeTelephoneEtudiant($telephone, $etudiants) {
+function existeTelephoneEtudiant($telephone, $etudiants,$id) {
     foreach ($etudiants as $etudiant) {
-        if (strtolower(trim($etudiant["telephone"])) == strtolower(trim($telephone))) {
+        if ($etudiant["id"] != $id && strtolower(trim($etudiant["telephone"])) == strtolower(trim($telephone))) {
             return true; // trouvé
         }
     }
     return false; // pas trouvé
 }
 
-function existeEmailEtudiant($email, $etudiants) {
+function existeEmailEtudiant($email, $etudiants,$id) {
     foreach ($etudiants as $etudiant) {
-        if (strtolower(trim($etudiant["email"])) == strtolower(trim($email))) {
+        if ($etudiant["id"] != $id && strtolower(trim($etudiant["email"])) == strtolower(trim($email))) {
             return true; // trouvé
         }
     }

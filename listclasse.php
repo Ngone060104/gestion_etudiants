@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->
@@ -46,7 +46,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <i class="fas fa-comment"></i>
                     <span>Classe</span>
                 </div>
-                <a href="index.php?page=etudiant" class="menu-item">
+                <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
                     <span>Etudiant</span>
                 </a>
@@ -78,84 +78,49 @@ if (session_status() == PHP_SESSION_NONE) {
             <div style="  margin-top: 05%;">
                 <div class="P3">
 
-                    <div class="Gcontainer">
-                        <!-- Formulaire Classe adapté au dashboard -->
-                        <!-- Section Liste des Classes -->
-                        <div class="card-list">
-                            <h2>Liste des Classes</h2>
-                            <form action="index.php" class="Filtres" method="get">
-                                <input type="hidden" name="page" value="listclasse">
-                                <input type="number" placeholder="Rechercher une filiere ou un niveau par son  Id" name="id" value="<?= $_REQUEST["id"] ?? "" ?>">
-                                <button class="btfiltre" type="submit">Filtres</button>
-                            </form>
-                           
-                            <div class="list-container">
+                    <div class="table-container">
+                        <h2>Liste des Classes</h2>
+                        <form action="index.php" class="Filtres" method="get">
+                            <input type="hidden" name="page" value="classe">
+                            <button class="btfiltre" type="submit">Ajouter</button>
+                        </form>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Libellé</th>
+                                    <th>Filière</th>
+                                    <th>Niveau</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <?php foreach ($classes as $classe): ?>
-                                    <!-- Exemple de card classe -->
-                                    <div class="class-card">
-                                        <h3>CODE: <strong><?= ($classe["code"]) ?></strong></h3>
-                                        <p>Libelle: <strong> <?= ($classe["libelle"]) ?></strong></p>
-                                        <?php
-                                        $idFiliere = $classe["filiere_id"] ?? ($classe["filiere"] ?? null);
-                                        $idNiveau  = $classe["niveau_id"] ?? ($classe["niveau"] ?? null);
-                                        ?>
-                                        <p>Filiere: <strong> <?= findFiliereLibelleById($idFiliere, $filieres) ?? "" ?></strong></p>
-                                        <p>Niveau: <strong> <?= findNiveauLibelleById($idNiveau, $niveaux) ?? "" ?></strong></p>
-                                        <div class="icone">
+                                    <tr>
+                                        <td><?= $classe["code"] ?></td>
+                                        <td><?= $classe["libelle"] ?></td>
+                                        <td><?= findFiliereLibelleById($classe["filiere_id"] ?? $classe["filiere"], $filieres) ?? "" ?></td>
+                                        <td><?= findNiveauLibelleById($classe["niveau_id"] ?? $classe["niveau"], $niveaux) ?? "" ?></td>
+                                        <td class="actions">
                                             <form action="index.php?page=modifierclasse" method="post">
-                                                <input type="hidden" name="page" value="modifierclasse">
                                                 <input type="hidden" name="id" value="<?= $classe['id'] ?>">
-                                                <button class="mod" type="submit" name="edit"><i class="fa-solid fa-pen" id="edit"></i></button>
+                                                <button class="mod"><i class="fa-solid fa-pen" id="modifier"></i></button>
                                             </form>
 
                                             <form action="index.php?page=listclasse" method="post">
                                                 <input type="hidden" name="delete_id" value="<?= $classe['id'] ?>">
-                                                <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="sup"></i></button>
+                                                <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="supprimer"></i></button>
                                             </form>
-
-                                        </div>
-
-
-                                    </div>
-
-                                    <!-- Tu pourras générer les autres en PHP -->
+                                            <form action="">
+                                                <button class="view"><i class="fa-regular fa-eye"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
-                            </div>
-                        </div>
-
-
-
+                            </tbody>
+                        </table>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -163,10 +128,45 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
 
 
         </div>
+
+
+    </div>
 
     </div>
 </body>
