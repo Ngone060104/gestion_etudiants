@@ -1,0 +1,350 @@
+.Dash {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.P1 {
+    width: 20%;
+    background-color: #4988F4;
+    height: 550px;
+    position: fixed;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.P2 {
+    height: 10vh;
+    width: 102%;
+    background-color: #4988F4;
+    border-radius: 50px;
+    margin-left: 22%;
+}
+
+.P3 {
+    height: 470px;
+    width: 99%;
+    background-color: #4988F4;
+    margin-top: -2%;
+    padding: 05px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Logo en haut */
+.top {
+    display: flex;
+    justify-content: flex-start;
+    /* logo à gauche */
+    align-items: center;
+    padding: 10px;
+    /* petit padding pour que le logo ne colle pas au bord */
+}
+
+.logo-img {
+    width: 200px;
+    /* ajuste selon ton logo */
+    margin-top: -20%;
+}
+
+/* Menu principal centré */
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* prend tout l'espace restant */
+    justify-content: center;
+    /* centré verticalement */
+    gap: 05px;
+    margin-top: -90%;
+
+}
+
+/* Menu bas (Paramètres & Déconnexion) */
+.menu-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 05px;
+}
+
+/* Chaque item (icône + texte côte à côte) */
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* .menu-item i {
+    font-size: 20px;
+}
+
+.menu-item:hover {
+    background-color: #134484;
+    color: white;
+} */
+.menu-item {
+    transition: background 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+    background: #0099ff;
+    transform: translateX(5px);
+}
+a{
+    text-decoration: none;
+}
+#bell {
+    margin-left: 39%;
+    margin-top: 2%;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+#bell:hover {
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+
+.text1 {
+    margin-right: 65%
+}
+
+.recherche:focus {
+    outline: none;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 10px black;
+    transition: 0.3s;
+}
+
+.img2 {
+    width: 42px;
+    /* même largeur et hauteur */
+    height: 42px;
+    border-radius: 50%;
+    /* rend le carré circulaire */
+    object-fit: cover;
+    /* recadre pour éviter l’étirement */
+    display: block;
+    margin-left: 80%;
+    margin-top: -03%;
+}
+
+h4 {
+    margin-left: 86%;
+    margin-top: -04%;
+    font-size: 15px;
+    color: white;
+}
+
+.sous_titre {
+    margin-left: 86%;
+    margin-top: -02%;
+    font-size: 10px;
+    color: white;
+}
+
+.card1 {
+    border: 1px solid gainsboro;
+    height: 100px;
+    background-color: white;
+    margin: 05px;
+    border-radius: 10px;
+    padding: 05px;
+
+}
+
+
+
+h2 {
+    margin-left: 15px;
+    color: black;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+form {
+    margin-top: -1%;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+
+input {
+    border: 1px solid rgb(197, 197, 200);
+    height: 20px;
+    border-radius: 03px;
+    outline: none;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 10px black;
+    transition: 0.3s;
+
+}
+
+.input1 {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 05px;
+    margin: 08px;
+}
+
+.d1 {
+    display: flex;
+    gap: 10px;
+    /* espace entre les champs */
+    padding: 05px;
+    margin-top: -01%;
+}
+
+.d1 div {
+    flex: 1;
+    /* chaque input prend la même largeur */
+}
+
+.bt1 {
+    padding: 05px;
+    border-radius: 05px;
+    background-color: #134484;
+    color: white;
+    margin-top: 10px;
+    width: 30%;
+    margin-left: 70%;
+    border: 1px solid whitesmoke;
+
+}
+
+.bt1 {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.bt1:hover {
+    transform: scale(1.05);
+    background: #1a5276;
+}
+
+
+#calendar {
+    color: #134484;
+    margin-right: 50%;
+}
+
+.list {
+    font-size: 14px;
+
+}
+
+.Search2 {
+    background-color: white;
+    width: 20%;
+    height: 05vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid gainsboro;
+    margin-right: 04%;
+    margin-top: 05px;
+    border-radius: 05px;
+}
+
+.card2 {
+    margin-top: -27%;
+}
+
+.Gcontainer {
+    background-color: white;
+    height: 50vh;
+    margin: 08px;
+    padding: 20px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f0f4f8;
+    /* couleur professionnelle */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 200px;
+    /* s'adapte selon l'espace */
+    text-align: center;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #1d3557;
+    /* titre */
+}
+
+.card p {
+    color: #457b9d;
+    /* texte */
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sup{
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+   border-radius: 10px;
+}
+
+::placeholder {
+    font-size: 08px;
+}
+.errorlibelleniveau{
+    color: brown;
+    margin-left: 110%;
+    margin-top: -06%;
+    width: 100%;
+    font-weight: bolder;
+}

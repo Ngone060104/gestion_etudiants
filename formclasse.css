@@ -1,0 +1,262 @@
+.Dash {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.P1 {
+    width: 20%;
+    background-color: #4988F4;
+    height: 550px;
+    position: fixed;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.P2 {
+    height: 10vh;
+    width: 102%;
+    background-color: #4988F4;
+    border-radius: 50px;
+    margin-left: 22%;
+}
+
+.P3 {
+    height: 470px;
+    width: 99%;
+    background-color: #4988F4;
+    margin-top: -2%;
+    padding: 05px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Logo en haut */
+.top {
+    display: flex;
+    justify-content: flex-start;
+    /* logo à gauche */
+    align-items: center;
+    padding: 10px;
+    /* petit padding pour que le logo ne colle pas au bord */
+}
+
+.logo-img {
+    width: 200px;
+    /* ajuste selon ton logo */
+    margin-top: -20%;
+}
+
+/* Menu principal centré */
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* prend tout l'espace restant */
+    justify-content: center;
+    /* centré verticalement */
+    gap: 05px;
+    margin-top: -90%;
+
+}
+
+/* Menu bas (Paramètres & Déconnexion) */
+.menu-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 05px;
+}
+
+/* Chaque item (icône + texte côte à côte) */
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* .menu-item i {
+    font-size: 20px;
+}
+
+.menu-item:hover {
+    background-color: #134484;
+    color: white;
+} */
+.menu-item {
+    transition: background 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+    background: #0099ff;
+    transform: translateX(5px);
+}
+
+#bell {
+    margin-left: 39%;
+    margin-top: 2%;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+#bell:hover {
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+
+.text1 {
+    margin-right: 65%
+}
+
+.recherche:focus {
+    outline: none;
+    border: 2px solid #3498db;
+    box-shadow: 0 0 10px black;
+    transition: 0.3s;
+}
+
+.img2 {
+    width: 42px;
+    /* même largeur et hauteur */
+    height: 42px;
+    border-radius: 50%;
+    /* rend le carré circulaire */
+    object-fit: cover;
+    /* recadre pour éviter l’étirement */
+    display: block;
+    margin-left: 80%;
+    margin-top: -03%;
+}
+
+h4 {
+    margin-left: 86%;
+    margin-top: -04%;
+    font-size: 15px;
+    color: white;
+}
+
+.sous_titre {
+    margin-left: 86%;
+    margin-top: -02%;
+    font-size: 10px;
+    color: white;
+}
+
+
+
+
+
+form {
+    margin-top: -1%;
+}
+
+
+#calendar {
+    color: #134484;
+    margin-right: 50%;
+}
+
+
+
+::placeholder {
+    font-size: 08px;
+}
+/* Style Dashboard pour Formulaire Classe */
+.card-form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 15px auto;
+  font-family: Arial, sans-serif;
+}
+
+ h2 {
+  margin-bottom: 30px;
+  color: #333;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+button:hover {
+  background-color: #134484;
+}
+
+.errorlibelleClasse{
+    color: brown;
+    font-weight: bolder;
+}
+
+.errorCodeClasse{
+color: brown;
+font-weight: bolder;
+}
+
+.errorFiliere,.errorNiveau{
+    color: brown;
+    font-weight: bolder;
+}
