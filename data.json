@@ -30,16 +30,6 @@
             "id": 8,
             "libelle": "Droit",
             "image": "https:\/\/picsum.photos\/300\/200"
-        },
-        "8": {
-            "id": 9,
-            "libelle": "Genie Civil",
-            "image": "https:\/\/picsum.photos\/300\/200"
-        },
-        "9": {
-            "id": 10,
-            "libelle": "G\u00e9nie Logiciel",
-            "image": "https:\/\/picsum.photos\/300\/200"
         }
     },
     "niveaux": [
@@ -75,44 +65,9 @@
             "libelle": "Informatique Licence 1 E",
             "filiere": "6",
             "niveau": "1"
-        },
-        {
-            "id": 2,
-            "code": "GL-L3-A",
-            "libelle": "G\u00e9nie Logiciel Licence 3 A",
-            "filiere": "10",
-            "niveau": "3",
-            "image": "https:\/\/picsum.photos\/300\/2002"
-        },
-        {
-            "id": 3,
-            "code": "GC-M2-A",
-            "libelle": "G\u00e9nie Civil Master 2 A",
-            "filiere": "9",
-            "niveau": "2"
         }
     ],
     "etudiants": {
-        "1": {
-            "id": 3,
-            "matricule": "ETU003",
-            "nom": "Mister ",
-            "prenom": "Bean",
-            "telephone": "70234561",
-            "email": "Teddy@pro.com",
-            "adresse": "Paris",
-            "classe": "2"
-        },
-        "2": {
-            "id": 4,
-            "matricule": "ETU004",
-            "nom": "Fatima",
-            "prenom": "Diagne",
-            "telephone": "781234567",
-            "email": "FaBintou123@gmail.com",
-            "adresse": "Apix",
-            "classe": "3"
-        },
         "3": {
             "id": 5,
             "matricule": "ETU005",
@@ -122,16 +77,6 @@
             "email": "Faby123@gmail.com",
             "adresse": "Bel Air",
             "classe": "1"
-        },
-        "4": {
-            "id": 6,
-            "matricule": "ETU006",
-            "nom": "Diagne",
-            "prenom": "Mame Ngon\u00e9",
-            "telephone": "766911225",
-            "email": "ngonemame67@gmail.com",
-            "adresse": "M\u00e9dina",
-            "classe": "2"
         }
     }
 }
