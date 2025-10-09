@@ -121,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                     <input type="hidden" name="page" value="classeniveau">
                                                     <input type="hidden" name="id" value="<?= $niveau['id'] ?>">
                                                     <button class="view" type="submit" title="Voir les classes">
-                                                        <i class="fa-regular fa-eye"></i>
+                                                       <i class="fa-solid fa-eye"></i>
                                                     </button>
                                                 </form>
 

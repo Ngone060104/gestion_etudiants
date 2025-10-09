@@ -88,25 +88,25 @@
                         <!-- <?php var_dump($etudiants); ?> -->
                         <table border="1">
                             <thead>
-                                <th>Matricule</th>
+                                <!-- <th>Matricule</th> -->
                                 <th>Nom</th>
                                 <th>Prenom</th>
                                 <th>Telephone</th>
                                 <th>Email</th>
-                                <th>Adresse</th>
-                                <th>Classe</th>
+                                <!-- <th>Adresse</th> -->
+                                <!-- <th>Classe</th> -->
                                 <th>Action</th>
                             </thead>
                             <tbody>
                             <?php foreach ($etudiants as $etudiant): ?>
                                 <tr>
-                                    <td><?= $etudiant["matricule"] ?></td>
+                                    <!-- <td><?= $etudiant["matricule"] ?></td> -->
                                     <td><?= $etudiant["nom"] ?></td>
                                     <td><?= $etudiant["prenom"] ?></td>
                                     <td><?= $etudiant["telephone"] ?></td>
                                     <td><?= $etudiant["email"] ?></td>
-                                    <td><?= $etudiant["adresse"] ?></td>
-                                    <td><?= findLibelleClasseById($etudiant["classe"]) ?> </td>
+                                    <!-- <td><?= $etudiant["adresse"] ?></td> -->
+                                    <!-- <td><?= findLibelleClasseById($etudiant["classe"]) ?> </td> -->
                                     <td>
                                         <div class="icone3">
                                             <form action="index.php" method="get">

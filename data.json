@@ -1,1 +1,127 @@
-{"users":[{"id":1,"prenom":"faby","nom":"diop","email":"admin@example.com","password":"admin123"},{"id":1,"prenom":"ngone","nom":"diagne","email":"ngone@gmail.com","password":"ngone123"}],"filieres":{"5":{"id":6,"libelle":"Informatique","image":"https:\/\/picsum.photos\/300\/200"},"6":{"id":7,"libelle":"Gestion Comptabilit\u00e9","image":"https:\/\/picsum.photos\/300\/200"},"7":{"id":8,"libelle":"Droit","image":"https:\/\/picsum.photos\/300\/200"},"8":{"id":9,"libelle":"Marketing","image":"https:\/\/picsum.photos\/300\/200"},"9":{"id":10,"libelle":"G\u00e9nie Logiciel","image":"https:\/\/picsum.photos\/300\/200"}},"niveaux":[{"id":1,"libelle":"Licence 1"},{"id":2,"libelle":"Master 2"},{"id":3,"libelle":"Licence 3"},{"id":4,"libelle":"BTS"},{"id":5,"libelle":"BT"}],"classes":[{"id":1,"code":"INF-L1-E","libelle":"Informatique Licence 1 E","filiere":"6","niveau":"1"},{"id":2,"code":"GC-L3-A","libelle":"G\u00e9nie Comptabilit\u00e9 Licence 3 A","filiere":"7","niveau":"3"},{"id":3,"code":"MC-M2-A","libelle":"Marketing Communication Master 2 A","filiere":"9","niveau":"2"},{"id":4,"code":"GL-BTS-B","libelle":"G\u00e9nie Logiciel BTS B","filiere":"10","niveau":"4"}],"etudiants":{"3":{"id":5,"matricule":"ETU005","nom":"Faby","prenom":"Diop","telephone":"770102030","email":"Faby1234@gmail.com","adresse":"Bel Air","classe":"1"},"4":{"id":6,"matricule":"ETU006","nom":"Mister ","prenom":"Bean","telephone":"706294655","email":"Teddy@pro.com","adresse":"Paris","classe":"3"},"5":{"id":7,"matricule":"ETU007","nom":"Fatima","prenom":"Bintou","telephone":"70234567","email":"FaBintou123@gmail.com","adresse":"M\u00e9dina","classe":"4"}}}
+{
+    "users": [
+        {
+            "id": 1,
+            "prenom": "faby",
+            "nom": "diop",
+            "email": "admin@example.com",
+            "password": "admin123"
+        },
+        {
+            "id": 1,
+            "prenom": "ngone",
+            "nom": "diagne",
+            "email": "ngone@gmail.com",
+            "password": "ngone123"
+        }
+    ],
+    "filieres": {
+        "5": {
+            "id": 6,
+            "libelle": "Informatique"
+        },
+        "6": {
+            "id": 7,
+            "libelle": "Gestion Comptabilit\u00e9"
+        },
+        "7": {
+            "id": 8,
+            "libelle": "Droit"
+        },
+        "8": {
+            "id": 9,
+            "libelle": "Marketing"
+        },
+        "9": {
+            "id": 10,
+            "libelle": "G\u00e9nie Logiciel"
+        }
+    },
+    "niveaux": [
+        {
+            "id": 1,
+            "libelle": "Licence 1"
+        },
+        {
+            "id": 2,
+            "libelle": "Master 2"
+        },
+        {
+            "id": 3,
+            "libelle": "Licence 3"
+        },
+        {
+            "id": 4,
+            "libelle": "BTS"
+        },
+        {
+            "id": 5,
+            "libelle": "BT"
+        }
+    ],
+    "classes": [
+        {
+            "id": 1,
+            "code": "INF-L1-E",
+            "libelle": "Informatique Licence 1 E",
+            "filiere": "6",
+            "niveau": "1"
+        },
+        {
+            "id": 2,
+            "code": "GC-L3-A",
+            "libelle": "G\u00e9nie Comptabilit\u00e9 Licence 3 A",
+            "filiere": "7",
+            "niveau": "3"
+        },
+        {
+            "id": 3,
+            "code": "MC-M2-A",
+            "libelle": "Marketing Communication Master 2 A",
+            "filiere": "9",
+            "niveau": "2"
+        },
+        {
+            "id": 4,
+            "code": "GL-BTS-B",
+            "libelle": "G\u00e9nie Logiciel BTS B",
+            "filiere": "10",
+            "niveau": "4"
+        }
+    ],
+    "etudiants": {
+        "3": {
+            "id": 5,
+            "matricule": "ETU005",
+            "nom": "Faby",
+            "prenom": "Diop",
+            "telephone": "770102030",
+            "email": "Faby1234@gmail.com",
+            "adresse": "Bel Air",
+            "classe": "1",
+            "observation": "Étudiante sérieuse et motivée, montre un grand intérêt pour la programmation."
+        },
+        "4": {
+            "id": 6,
+            "matricule": "ETU006",
+            "nom": "Mister ",
+            "prenom": "Bean",
+            "telephone": "706294655",
+            "email": "Teddy@pro.com",
+            "adresse": "Paris",
+            "classe": "3"
+            
+        },
+        "5": {
+            "id": 7,
+            "matricule": "ETU007",
+            "nom": "Fatima",
+            "prenom": "Bintou",
+            "telephone": "70234567",
+            "email": "FaBintou123@gmail.com",
+            "adresse": "M\u00e9dina",
+            "classe": "4"
+            
+        }
+    }
+}

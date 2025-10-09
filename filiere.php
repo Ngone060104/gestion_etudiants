@@ -100,7 +100,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <table class="table-filiere">
               <thead>
                 <tr>
-                  <th></th>
+                 
                   <th>Libellé</th>
                   <th>Actions</th>
                 </tr>
@@ -108,10 +108,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <tbody>
                 <?php foreach ($filieres as $filiere): ?>
                   <tr>
-                    <td>
-                      <img src="https://picsum.photos/60?random=<?= $filiere['id'] ?>" alt="Image filière" class="img-filiere">
-                    </td>
-                    <td><?= htmlspecialchars($filiere['libelle']) ?></td>
+                    <td><?=$filiere['libelle'] ?></td>
                     <td class="actions">
                       <form action="index.php?page=filiere" method="post" style="display:inline;">
                         <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
@@ -124,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <input type="hidden" name="page" value="classefiliere">
                         <input type="hidden" name="id" value="<?= $filiere['id'] ?>">
                         <button class="btn-view" type="submit" title="Voir les classes">
-                          <i class="fa-regular fa-eye"></i>
+                         <i class="fa-solid fa-eye"></i>
                         </button>
                       </form>
                     </td>

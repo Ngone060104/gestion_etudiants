@@ -239,8 +239,8 @@ input {
 
 .bt1 {
     padding: 05px;
-    border-radius: 05px;
-    background-color: #134484;
+    border-radius: 50px;
+    background-color: #007bff;
     color: white;
     margin-top: 10px;
     width: 30%;

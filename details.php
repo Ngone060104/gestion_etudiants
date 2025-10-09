@@ -20,12 +20,12 @@ require_once("fonction.php");
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->
             <div class="menu">
-                <a href="" class="menu-item">
+                <a href="index.php?page=dashbord" class="menu-item">
                     <i class="fa-solid fa-grip"></i>
                     <span>Dashbord</span>
                 </a>
@@ -86,9 +86,14 @@ require_once("fonction.php");
                                     <img src="https://picsum.photos/300/200" alt="" class="profile-pic">
                                     <h2>Détails de l'Étudiant</h2>
                                 </div>
+                                <?php
+                                $niveaux = findAllNiveaux();
+                                $filieres = findAllFilieres();
+                                ?>
 
                                 <div class="info-container">
                                     <div class="info-left">
+                                        <div class="info-item"><strong>Nom :</strong> <?= $etudiant['matricule'] ?> </div>
                                         <div class="info-item"><strong>Nom :</strong> <?= $etudiant['nom'] ?> </div>
                                         <div class="info-item"><strong>Prénom :</strong><?= $etudiant['prenom'] ?></div>
                                         <div class="info-item"><strong>Téléphone :</strong> <?= $etudiant['telephone'] ?></div>
@@ -97,8 +102,8 @@ require_once("fonction.php");
                                     <div class="info-right">
                                         <div class="info-item"><strong>Adresse :</strong><?= $etudiant['adresse'] ?></div>
                                         <div class="info-item"><strong>Classe :</strong><?= findLibelleClasseById($etudiant['classe']) ?></div>
-                                        <!-- <div class="info-item"><strong>Filiere :</strong><?= findFiliereLibelleById($id,$filieres),$filieres["libelle"] ?? "" ?></div>
-                                        <div class="info-item"><strong>Niveau :</strong><?= findNiveauLibelleById($id,$niveaux) ?></div> -->
+                                        <!-- <div class="info-item"><strong>Filiere :</strong><?= findFiliereLibelleById($id, $filieres), $filieres["libelle"] ?? "" ?></div>
+                                        <div class="info-item"><strong>Niveau :</strong><?= findNiveauLibelleById($id, $niveaux), $niveaux["libelle"] ?? "" ?></div>  -->
 
 
 
@@ -106,8 +111,9 @@ require_once("fonction.php");
                                 </div>
 
                                 <div class="observation">
-                                    <strong>Observation :</strong> Étudiante sérieuse et motivée, montre un grand intérêt pour la programmation et la conception de maquettes.
+                                    <strong>Observation :</strong> <?= $etudiant['observation'] ?? "Aucune observation" ?>
                                 </div>
+
 
                                 <div class="btn-container">
                                     <a href="index.php?page=listetudiant" class="btn">Retour Liste</a>
