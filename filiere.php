@@ -97,24 +97,34 @@ if (session_status() == PHP_SESSION_NONE) {
           </div>
           <div class="Gcontainer">
             <div class="cards-container">
-                <?php foreach ($filieres as $filiere): ?>
-              <div class="card">
-                <img
-                  src="https://picsum.photos/300/200"
-                  alt="<?=($filiere['libelle']) ?>">
-                <h3><?=($filiere['libelle']) ?></h3>
-                <form action="index.php?page=filiere" method="post">
-                <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
-                 <!-- <a href="<?= WEBROOT ?>?page=dashbord&id=<?= $tache["id"] ?>&supprimer=true"><button name="supprimer">Supprimer</button></a> -->
-                  <button class="delete" type="submit" name="delete"><i class="fa-solid fa-trash"></i></button>
-                  <button class="view"><i class="fa-regular fa-eye"></i></button>
-                </form>
-              </div>
-               <?php endforeach; ?>
+              <?php foreach ($filieres as $filiere): ?>
+                <div class="card">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    alt="<?= ($filiere['libelle']) ?>">
+                  <h3><?= ($filiere['libelle']) ?></h3>
+                  <div class="FORM">
+                  <form action="index.php?page=filiere" method="post">
+                    <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
+                    <!-- <a href="<?= WEBROOT ?>?page=dashbord&id=<?= $tache["id"] ?>&supprimer=true"><button name="supprimer">Supprimer</button></a> -->
+                    <button class="delete" type="submit" name="delete"><i class="fa-solid fa-trash"></i></button>
+                  </form>
 
-              
+                  <form action="index.php" method="get">
+                    <input type="hidden" name="page" value="classefiliere">
+                    <input type="hidden" name="id" value="<?= $filiere['id'] ?>">
+                    <button class="view" type="submit">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </form>
+                  </div>
+                  
+                </div>
+              <?php endforeach; ?>
 
-            
+
+
+
             </div>
           </div>
 

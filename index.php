@@ -75,7 +75,7 @@ define("WEBROOT", "http://localhost:8000/");
                 header("Location: index.php?page=filiere");
                 exit;
             }
-            require_once("filiere.php"); 
+            require_once("filiere.php");
         } elseif ($page == "niveau") {
             $niveaux = findAllNiveaux();
             $errorlibelleniveau = "";
@@ -110,7 +110,7 @@ define("WEBROOT", "http://localhost:8000/");
                 header("Location: index.php?page=niveau");
                 exit;
             }
-            require_once("niveau.php"); 
+            require_once("niveau.php");
         } elseif ($page == "classe") {
             $classes = findAllClasses();
             $filieres = findAllFilieres(); // récupérer toutes les filières
@@ -239,6 +239,12 @@ define("WEBROOT", "http://localhost:8000/");
                 }
             }
             require_once("modificationclasse.php");
+        } elseif ($page == "classeetudiants") {
+            $idClasse = $_GET["id"] ?? 0;
+            $etudiants = findAllEtudiants(); // on récupère tous les étudiants
+            $etudiants = filterEtudiantsByClasse($etudiants, $idClasse); // on filtre ceux de la classe
+            $classe = findClasseById($idClasse); // pour afficher le libellé de la classe
+            require_once("classeetudiants.php");
         } elseif ($page == "etudiant") {
             $classes = findAllClasses();
             $filieres = findAllFilieres();
@@ -274,14 +280,14 @@ define("WEBROOT", "http://localhost:8000/");
                 if (trim($_REQUEST["telephone"]) == "") {
                     $errorTelephoneEtudiant = "Le telephone est obligatoire";
                     $verification = false;
-                } elseif (existeTelephoneEtudiant($telephone, $etudiants)) {
+                } elseif (existeTelephoneEtudiant($telephone, $etudiants, $idEtudiant)) {
                     $errorTelephoneEtudiant = "Ce numero existe déjà";
                     $verification = false;
                 }
                 if (trim($_REQUEST["email"]) == "") {
                     $errorEmailEtudiant = "l'email est obligatoire";
                     $verification = false;
-                } elseif (existeEmailEtudiant($email, $etudiants)) {
+                } elseif (existeEmailEtudiant($email, $etudiants, $idEtudiant)) {
                     $errorEmailEtudiant = "Cet email existe déjà";
                     $verification = false;
                 }
@@ -380,14 +386,14 @@ define("WEBROOT", "http://localhost:8000/");
                 if (trim($_REQUEST["telephone"]) == "") {
                     $errorTelephoneEtudiant = "Le telephone est obligatoire";
                     $verification = false;
-                } elseif (existeTelephoneEtudiant($telephone, $etudiants,$idEtudiant)) {
+                } elseif (existeTelephoneEtudiant($telephone, $etudiants, $idEtudiant)) {
                     $errorTelephoneEtudiant = "Ce numéro de téléphone est déjà utilisé par un autre étudiant.";
                     $verification = false;
                 }
                 if (trim($_REQUEST["email"]) == "") {
                     $errorEmailEtudiant = "l'email est obligatoire";
                     $verification = false;
-                } elseif (existeEmailEtudiant($email, $etudiants,$idEtudiant)) {
+                } elseif (existeEmailEtudiant($email, $etudiants, $idEtudiant)) {
                     $errorEmailEtudiant = "Cet email est déjà utilisé par un autre étudiant.";
                     $verification = false;
                 }
@@ -439,7 +445,8 @@ define("WEBROOT", "http://localhost:8000/");
             }
 
             require_once("classefiliere.php");
-        } elseif ($page == "classeniveau") {
+        } 
+        elseif ($page == "classeniveau") {
             $idNiveau = $_GET["id"] ?? 0;
             $classes = findAllClasses();
             $niveaux = findAllNiveaux();
@@ -453,8 +460,7 @@ define("WEBROOT", "http://localhost:8000/");
             }
 
             require_once("classeniveau.php");
-        }
-        else {
+        } else {
             echo "<h1> Page Introuvable </h1>";
         }
     } else {

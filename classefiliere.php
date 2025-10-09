@@ -82,44 +82,67 @@ if (session_status() == PHP_SESSION_NONE) {
                         <!-- <?php var_dump($classes) ?> -->
                         <!-- Formulaire Classe adapté au dashboard -->
                         <!-- Section Liste des Classes -->
-                        <div class="card-list">
-                            <h2 style="color:brown">Liste des classes de la filière :
-                                <strong><?=($libelleFiliere ?? "") ?></strong>
-                            </h2>
-                            <form action="index.php" class="Filtres" method="get">
-                                <input type="hidden" name="page" value="classefiliere">
-                                <input type="number" placeholder="Rechercher une filiere ou un niveau par son  Id" name="id" value="<?= $_REQUEST["id"] ?? "" ?>">
-                                <button class="btfiltre" type="submit">Filtres</button>
-                            </form>
+                        <?php if (empty($classes)): ?>
+                            <p>Aucune filiere trouvée pour cette classe.</p>
+                        <?php else: ?>
+                            <div class="card-list">
+                                <h2 style="color:brown">Liste des classes de la filière :
+                                    <strong><?= ($libelleFiliere ?? "") ?></strong>
+                                </h2>
+                                <form action="index.php" class="Filtres" method="get">
+                                    <input type="hidden" name="page" value="filiere">
+                                    <button class="btfiltre" type="submit">Listes filiere</button>
+                                </form>
 
-                            <div class="list-container">
-                                <?php foreach ($classes as $c): ?>
-                                    <!-- Exemple de card classe -->
-                                    <div class="class-card">
-                                        <h3>CODE: <strong><?= ($c["code"]) ?></strong></h3>
-                                        <p>Libelle: <strong> <?= ($c["libelle"]) ?></strong></p>
-                                        <!-- <p>Niveau: <strong> <?= $libelleNiveau?></strong></p> -->
-                                        <div class="icone">
-                                            <form action="index.php?page=modifierclasse" method="post">
-                                                <input type="hidden" name="page" value="modifierclasse">
-                                                <input type="hidden" name="id" value="<?= $c['id'] ?>">
-                                                <button class="mod" type="submit" name="edit"><i class="fa-solid fa-pen" id="edit"></i></button>
-                                            </form>
+                                <div class="list-container">
+                                    <?php foreach ($classes as $c): ?>
+                                        <!-- Exemple de card classe -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Libellé</th>
+                                                    <th>Filière</th>
+                                                    <th>Niveau</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($classes as $c): ?>
+                                                    <tr>
+                                                        <td><?= $c["code"] ?></td>
+                                                        <td><?= $c["libelle"] ?></td>
+                                                        <td><?= findFiliereLibelleById($c["filiere_id"] ?? $c["filiere"], $filieres) ?? "" ?></td>
+                                                        <!-- <td><?= findNiveauLibelleById($c["niveau_id"] ?? $c["niveau"], $niveaux) ?? "" ?></td> -->
+                                                        <td>
+                                                            <form action="index.php?page=modifierclasse" method="post" style="display:inline;">
+                                                                <input type="hidden" name="id" value="<?= $c['id'] ?>">
+                                                                <button class="mod" type="submit" name="edit">
+                                                                    <i class="fa-solid fa-pen"></i>
+                                                                </button>
+                                                            </form>
 
-                                            <form action="index.php?page=listclasse" method="post">
-                                                <input type="hidden" name="delete_id" value="<?= $c['id'] ?>">
-                                                <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="sup"></i></button>
-                                            </form>
+                                                            <form action="index.php?page=listclasse" method="post" style="display:inline;">
+                                                                <input type="hidden" name="delete_id" value="<?= $c['id'] ?>">
+                                                                <button class="sup" type="submit" name="delete">
+                                                                    <i class="fa-solid fa-trash"></i>
+                                                                </button>
+                                                            </form>
 
-                                        </div>
+                                                            <a href="index.php?page=classeetudiants&id=<?= $c['id'] ?>" class="view">
+                                                                <i class="fa-solid fa-eye"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
 
-
-                                    </div>
-
-                                    <!-- Tu pourras générer les autres en PHP -->
-                                <?php endforeach; ?>
+                                        <!-- Tu pourras générer les autres en PHP -->
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                             </div>
-                        </div>
 
 
 

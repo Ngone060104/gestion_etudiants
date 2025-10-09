@@ -359,3 +359,7 @@ input {
     color: black;
     border: none;
 }
+.FORM{
+    display: flex;
+    justify-content: center;
+}

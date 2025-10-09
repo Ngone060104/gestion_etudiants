@@ -112,8 +112,13 @@ if (session_status() == PHP_SESSION_NONE) {
                                                 <input type="hidden" name="delete_id" value="<?= $classe['id'] ?>">
                                                 <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="supprimer"></i></button>
                                             </form>
-                                            <form action="">
-                                                <button class="view"><i class="fa-regular fa-eye"></i></button>
+                                
+                                            <form action="index.php" method="get">
+                                                <input type="hidden" name="page" value="classeetudiants">
+                                                <input type="hidden" name="id" value="<?= $classe['id'] ?>">
+                                                <button class="voir" type="submit">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
