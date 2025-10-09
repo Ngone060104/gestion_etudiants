@@ -84,6 +84,10 @@ if (session_status() == PHP_SESSION_NONE) {
                         <!-- Section Liste des Classes -->
                         <?php if (empty($classes)): ?>
                             <p>Aucune classe trouvée pour cette filiere.</p>
+                            <form action="index.php" class="Filtres" method="get">
+                                    <input type="hidden" name="page" value="filiere">
+                                    <button class="btfiltre" type="submit">Listes filiere</button>
+                            </form>
                         <?php else: ?>
                             <div class="card-list">
                                 <h2 style="color:brown">Liste des classes de la filière :

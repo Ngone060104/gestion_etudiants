@@ -235,9 +235,13 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 15px;
-  border-radius: 12px;
   overflow: hidden;
   border: 1px solid  #f8f8f8;
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* En-têtes */

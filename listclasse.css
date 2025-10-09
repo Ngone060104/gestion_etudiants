@@ -6,7 +6,7 @@
 
 .P1 {
     width: 20%;
-    background-color: #4988F4;
+    background-color: #007bff;
     height: 550px;
     position: fixed;
     border-top-right-radius: 20px;
@@ -21,7 +21,7 @@
 .P2 {
     height: 10vh;
     width: 102%;
-    background-color: #4988F4;
+    background-color: #007bff;
     border-radius: 50px;
     margin-left: 22%;
 }
@@ -29,7 +29,7 @@
 .P3 {
     height: 470px;
     width: 99%;
-    background-color: #4988F4;
+    background-color: #007bff;
     margin-top: -2%;
     padding: 05px;
     border-top-left-radius: 20px;
@@ -244,6 +244,12 @@ form {
 table {
     width: 100%;
     border-collapse: collapse;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 thead {

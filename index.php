@@ -434,20 +434,17 @@ define("WEBROOT", "http://localhost:8000/");
             require_once("details.php"); // affiche la page détails
         } elseif ($page == "classefiliere") {
             $idFiliere = $_GET["id"] ?? 0;
-            $classes = findAllClasses();
+            $classes=findClassesByFiliereId($idFiliere);
             $filieres = findAllFilieres();
             $niveaux = findAllNiveaux(); // récupère tous les niveaux
             $libelleFiliere = findFiliereLibelleById($idFiliere, $filieres);
-            $classes = filterClasseByFiliere($classes, $idFiliere);
-
             require_once("classefiliere.php");
         } elseif ($page == "classeniveau") {
             $idNiveau = $_GET["id"] ?? 0;
-            $classes = findAllClasses();
+            $classes=findClassesByNiveauId($idNiveau);
             $niveaux = findAllNiveaux();
             $filieres = findAllFilieres();
             $libelleNiveau = findNiveauLibelleById($idNiveau, $niveaux);
-            $classes = filterClasseByNiveau($classes, $idNiveau);
             require_once("classeniveau.php");
         } else {
             echo "<h1> Page Introuvable </h1>";

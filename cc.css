@@ -1,4 +1,3 @@
-
 /* Réinitialisation */
 * {
   margin: 0;
@@ -9,15 +8,14 @@
 
 /* Body */
 body {
-   background-image: url(https://images.unsplash.com/photo-1607013407627-6ee814329547?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVuaXZlcnNpdHl8ZW58MHx8MHx8fDA%3D);
-  
+  /* background-color: white; */
+  background: linear-gradient(135deg, #4facfe, white);
+
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background-size: cover;
-  background-position: center;
 }
 
 /* Container */
@@ -31,10 +29,13 @@ body {
 
 /* Bloc gauche (promo) */
 .promo {
-  background:#1e40af; /* bleu très clair */
+  background-image: url(https://images.unsplash.com/photo-1607013407627-6ee814329547?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVuaXZlcnNpdHl8ZW58MHx8MHx8fDA%3D);
+  background-size: cover;
+  background-position: center;
   padding: 40px;
   border-radius: 12px;
-  color: white ;
+  color: white;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .promo h2 {
@@ -49,15 +50,19 @@ body {
 
 /* Bloc droit (formulaire) */
 .card {
-  background-color:white ;
+  background-color: white;
   padding: 40px;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+
 }
 
 .card h2 {
   margin-bottom: 20px;
+  font-weight: bolder;
 }
 
 /* Formulaire */
@@ -85,7 +90,7 @@ input {
   padding: 12px;
   border: none;
   border-radius: 8px;
- background-color: #2563eb;
+  background-color: #007bff;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -101,16 +106,20 @@ input {
   .container {
     grid-template-columns: 1fr;
   }
+
   .promo {
     order: 1;
     margin-bottom: 20px;
   }
+
   .card {
     order: 2;
   }
 }
-.error{
+
+.error {
   color: brown;
 }
+
 /*Formulaire de connexion*/
 /* */

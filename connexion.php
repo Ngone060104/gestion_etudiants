@@ -16,11 +16,6 @@
     <div class="promo">
       <h2>Bienvenue sur l'espace étudiant</h2>
       <p>Connectez-vous pour accéder à vos cours et ressources.</p>
-      
-         <ul>
-        <li>Design sobre et professionnel</li>
-        <li>HTML/CSS + PHP uniquement</li>
-      </ul>
     </div>
 
     <!-- Bloc droit (formulaire) -->

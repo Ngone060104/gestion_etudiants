@@ -6,7 +6,7 @@
 
 .P1 {
     width: 20%;
-    background-color: #4988F4;
+    background-color: #007bff;
     height: 550px;
     position: fixed;
     border-top-right-radius: 20px;
@@ -21,7 +21,7 @@
 .P2 {
     height: 10vh;
     width: 102%;
-    background-color: #4988F4;
+    background-color: #007bff;
     border-radius: 50px;
     margin-left: 275px;
 
@@ -31,7 +31,7 @@
 .P3 {
     height: 470px;
     width: 99%;
-    background-color: #4988F4;
+    background-color:#007bff;
     margin-top: -2%;
     padding: 05px;
     border-top-left-radius: 20px;
@@ -230,6 +230,8 @@ h4 {
 
 .card:hover {
     transform: translateY(-5px);
+    background: linear-gradient(135deg, white 0%, #0099ff 100%);
+    color: white; /* optionnel : texte blanc si le gradient est coloré */
 }
 
 .card h3 {

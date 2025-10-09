@@ -97,35 +97,42 @@ if (session_status() == PHP_SESSION_NONE) {
           </div>
           <div class="Gcontainer">
             <h2>Listes des Filières</h2>
-            <div class="cards-container">
-              <?php foreach ($filieres as $filiere): ?>
-                <div class="card">
-                  <img
-                    src="https://picsum.photos/300/200"
-                    alt="<?= ($filiere['libelle']) ?>">
-                  <h3><?= ($filiere['libelle']) ?></h3>
-                  <div class="FORM">
-                  <form action="index.php?page=filiere" method="post">
-                    <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
-                    <button class="delete" type="submit" name="delete"><i class="fa-solid fa-trash"></i></button>
-                  </form>
+            <table class="table-filiere">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Libellé</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($filieres as $filiere): ?>
+                  <tr>
+                    <td>
+                      <img src="https://picsum.photos/60?random=<?= $filiere['id'] ?>" alt="Image filière" class="img-filiere">
+                    </td>
+                    <td><?= htmlspecialchars($filiere['libelle']) ?></td>
+                    <td class="actions">
+                      <form action="index.php?page=filiere" method="post" style="display:inline;">
+                        <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
+                        <button class="btn-delete" type="submit" name="delete" title="Supprimer">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </form>
 
-                  <form action="index.php" method="get">
-                    <input type="hidden" name="page" value="classefiliere">
-                    <input type="hidden" name="id" value="<?= $filiere['id'] ?>">
-                    <button class="view" type="submit">
-                      <i class="fa-regular fa-eye"></i>
-                    </button>
-                  </form>
-                  </div>
-                  
-                </div>
-              <?php endforeach; ?>
+                      <form action="index.php" method="get" style="display:inline;">
+                        <input type="hidden" name="page" value="classefiliere">
+                        <input type="hidden" name="id" value="<?= $filiere['id'] ?>">
+                        <button class="btn-view" type="submit" title="Voir les classes">
+                          <i class="fa-regular fa-eye"></i>
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
 
-
-
-
-            </div>
           </div>
 
 

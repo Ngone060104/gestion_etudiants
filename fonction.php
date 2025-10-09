@@ -332,34 +332,34 @@ function findClassesByFiliereId($id): array
     $classes = findAllClasses();
     $trouve = [];
     foreach ($classes as $classe) {
-        if ($classe["filiere_id"] == $id) {
+        if ($classe["filiere"] == $id) {
             array_push($trouve, $classe);
         }
     }
     return $trouve;
 }
 
-// function findClassesByNiveauId($id): array
-// {
-//     $classes = findAllClasses();
-//     $trouve = [];
-//     foreach ($classes as $classe) {
-//         if (($classe["niveau_id"] ?? $classe["niveau"]) == $id) {
-//             array_push($trouve, $classe);
-//         }
-//     }
-//     return $trouve;
-// }
-function findClassesByNiveauId($id): array {
+function findClassesByNiveauId($id): array
+{
     $classes = findAllClasses();
     $trouve = [];
-    foreach($classes as $classe){
-        if ((string)$classe["niveau"] === (string)$id) {
-            $trouve[] = $classe;
+    foreach ($classes as $classe) {
+        if ((int)$classe["niveau"] ==(int) $id) {
+            array_push($trouve, $classe);
         }
     }
     return $trouve;
 }
+// function findClassesByNiveauId($id): array {
+//     $classes = findAllClasses();
+//     $trouve = [];
+//     foreach($classes as $classe){
+//         if ((string)$classe["niveau"] == (string)$id) {
+//             $trouve[] = $classe;
+//         }
+//     }
+//     return $trouve;
+// }
 
 
 function existeNiveau($libelle, $niveaux)
