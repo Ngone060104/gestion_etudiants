@@ -220,6 +220,7 @@ form {
     width: 10%;
 }
 
+
 .card-list h2 {
     margin-bottom: 20px;
     color: #333;
@@ -295,4 +296,7 @@ background-color: brown;
 }
 .voir{
     background-color: black;
+}
+a{
+    text-decoration: none;
 }

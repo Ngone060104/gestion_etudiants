@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->

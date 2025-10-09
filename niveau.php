@@ -97,17 +97,49 @@ if (session_status() == PHP_SESSION_NONE) {
                         </form>
                     </div>
                     <div class="Gcontainer">
-                        <div class="cards-container">
-                            <?php foreach ($niveaux as $niveau): ?>
-                                <div class="card">
-                                    <h3><?=($niveau['libelle']) ?? ""?></h3>
-                                    <form action="index.php?page=niveau" method="post">
-                                        <input type="hidden" name="delete_id" value="<?= $niveau['id'] ?>">
-                                        <button class="sup" type="submit" name="delete">delete</button>
-                                    </form>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
+                        <h2 style="">Liste des niveaux</h2>
+
+                        <?php if (empty($niveaux)): ?>
+                            <p>Aucun niveau enregistré.</p>
+                        <?php else: ?>
+                            <table class="table-niveau">
+                                <thead>
+                                    <tr>
+
+                                        <th>Libellé</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($niveaux as $niveau): ?>
+                                        <tr>
+
+                                            <td><?= $niveau['libelle'] ?></td>
+                                            <td class="actions">
+                                                <!-- Bouton voir classe de cette niveau -->
+                                                <form action="index.php" method="get">
+                                                    <input type="hidden" name="page" value="classeniveau">
+                                                    <input type="hidden" name="id" value="<?= $niveau['id'] ?>">
+                                                    <button class="view" type="submit">
+                                                        <i class="fa-regular fa-eye"></i>
+                                                    </button>
+                                                </form>
+
+                                                <!-- Bouton supprimer -->
+                                                <form action="index.php?page=niveau" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?= $niveau['id'] ?>">
+                                                    <button class="sup" type="submit" name="delete">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php endif; ?>
+
+
 
                     </div>
 

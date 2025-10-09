@@ -80,7 +80,7 @@ require_once("fonction.php");
                     <div class="card1">
                         <!-- CONTENU PRINCIPAL -->
                         <main class="content">
-                            <h2 class="user">Bienvenue, <?=$_SESSION["userConnected"]["prenom"] ??""?></h2>
+                            <h2 class="user">Dashbord</h2>
 
                             <!-- Cartes récapitulatives -->
                             <div class="cards">

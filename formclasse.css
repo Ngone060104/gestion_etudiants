@@ -47,9 +47,10 @@
 }
 
 .logo-img {
-    width: 200px;
+    width: 50px;
     /* ajuste selon ton logo */
-    margin-top: -20%;
+    border-radius: 50px;
+ 
 }
 
 /* Menu principal centré */
@@ -61,7 +62,7 @@
     justify-content: center;
     /* centré verticalement */
     gap: 05px;
-    margin-top: -90%;
+    margin-top: -70%;
 
 }
 
@@ -80,7 +81,7 @@
     gap: 10px;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 10px;
     border-radius: 8px;
     cursor: pointer;
@@ -199,8 +200,7 @@ form {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   max-width: 900px;
-  margin: 15px auto;
-  font-family: Arial, sans-serif;
+  margin: 10px auto;
 }
 
  h2 {

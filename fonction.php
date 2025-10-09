@@ -56,19 +56,20 @@ function arrayToJson(array $data): void
 
 
 
-function findFiliereLibelleById($id, $filieres) {
+function findFiliereLibelleById($id, $filieres)
+{
     foreach ($filieres as $filiere) {
         if ($filiere["id"] == $id) {
-            return $filiere["libelle"]; 
+            return $filiere["libelle"];
         }
     }
-
 }
 
-function findNiveauLibelleById($id, $niveaux) {
+function findNiveauLibelleById($id, $niveaux)
+{
     foreach ($niveaux as $niveau) {
         if ($niveau["id"] == $id) {
-            return $niveau["libelle"]; 
+            return $niveau["libelle"];
         }
     }
     return null; // si le niveau n'existe pas
@@ -76,7 +77,7 @@ function findNiveauLibelleById($id, $niveaux) {
 
 
 
-function findClasseById($id):array
+function findClasseById($id): array
 {
     $datas = jsonToArray();
     foreach ($datas["classes"] as $classe) {
@@ -87,17 +88,19 @@ function findClasseById($id):array
     return [];
 }
 
-function findEtudiantById($id):array {
-  $datas=jsonToArray();
-    foreach($datas["etudiants"] as $etudiant) {
-        if($etudiant["id"] == $id) {
+function findEtudiantById($id): array
+{
+    $datas = jsonToArray();
+    foreach ($datas["etudiants"] as $etudiant) {
+        if ($etudiant["id"] == $id) {
             return $etudiant;
         }
     }
     return []; // Si aucun étudiant n'est trouvé
 }
 
-function findLibelleClasseById($idClasse): string {
+function findLibelleClasseById($idClasse): string
+{
     $datas = jsonToArray();
     foreach ($datas["classes"] as $classe) {
         if ($classe["id"] == $idClasse) {
@@ -168,18 +171,18 @@ function ajoutNiveau($libelle): void
     arrayToJson($datas);
 }
 
-function ajoutClasse($classe):void{
+function ajoutClasse($classe): void
+{
     $datas = jsonToArray();
-    array_push($datas["classes"],$classe);
-     arrayToJson($datas);
-
+    array_push($datas["classes"], $classe);
+    arrayToJson($datas);
 }
 
-function ajoutEtudiant($etudiant):void{
+function ajoutEtudiant($etudiant): void
+{
     $datas = jsonToArray();
-    array_push($datas["etudiants"],$etudiant);
-     arrayToJson($datas);
-
+    array_push($datas["etudiants"], $etudiant);
+    arrayToJson($datas);
 }
 
 function ajoutTache($tache): void
@@ -297,52 +300,70 @@ function hello(): void
 }
 
 // Nombre de filières
-function getNombreFilieres(): int {
+function getNombreFilieres(): int
+{
     $datas = jsonToArray();
     return isset($datas["filieres"]) ? count($datas["filieres"]) : 0;
 }
 
 // Nombre de niveaux
-function getNombreNiveaux(): int {
+function getNombreNiveaux(): int
+{
     $datas = jsonToArray();
     return isset($datas["niveaux"]) ? count($datas["niveaux"]) : 0;
 }
 
 // Nombre de classes
-function getNombreClasses(): int {
+function getNombreClasses(): int
+{
     $datas = jsonToArray();
     return isset($datas["classes"]) ? count($datas["classes"]) : 0;
 }
 
 // Nombre d'étudiants
-function getNombreEtudiants(): int {
+function getNombreEtudiants(): int
+{
     $datas = jsonToArray();
     return isset($datas["etudiants"]) ? count($datas["etudiants"]) : 0;
 }
 
-function findClassesByFiliereId($id):array{
-    $classes=findAllClasses();
-    $trouve=[];
-    foreach($classes as $classe){
-        if($classe["filiere_id"]== $id){
-            array_push($trouve,$classe);
+function findClassesByFiliereId($id): array
+{
+    $classes = findAllClasses();
+    $trouve = [];
+    foreach ($classes as $classe) {
+        if ($classe["filiere_id"] == $id) {
+            array_push($trouve, $classe);
         }
-}
-  return $trouve;
+    }
+    return $trouve;
 }
 
-function findClassesByNiveauId($id):array{
-    $classes=findAllClasses();
-    $trouve=[];
+// function findClassesByNiveauId($id): array
+// {
+//     $classes = findAllClasses();
+//     $trouve = [];
+//     foreach ($classes as $classe) {
+//         if (($classe["niveau_id"] ?? $classe["niveau"]) == $id) {
+//             array_push($trouve, $classe);
+//         }
+//     }
+//     return $trouve;
+// }
+function findClassesByNiveauId($id): array {
+    $classes = findAllClasses();
+    $trouve = [];
     foreach($classes as $classe){
-        if($classe["niveau_id"]== $id){
-            array_push($trouve,$classe);
+        if ((string)$classe["niveau"] === (string)$id) {
+            $trouve[] = $classe;
         }
-}
-  return $trouve;
+    }
+    return $trouve;
 }
 
-function existeNiveau($libelle, $niveaux) {
+
+function existeNiveau($libelle, $niveaux)
+{
     foreach ($niveaux as $niveau) {
         if (strtolower(trim($niveau["libelle"])) == strtolower(trim($libelle))) {
             return true; // trouvé
@@ -351,7 +372,8 @@ function existeNiveau($libelle, $niveaux) {
     return false; // pas trouvé
 }
 
-function existeFiliere($libelle, $filieres) {
+function existeFiliere($libelle, $filieres)
+{
     foreach ($filieres as $filiere) {
         if (strtolower(trim($filiere["libelle"])) == strtolower(trim($libelle))) {
             return true; // trouvé
@@ -360,7 +382,8 @@ function existeFiliere($libelle, $filieres) {
     return false; // pas trouvé
 }
 
-function existeCodeClasse($code, $classes) {
+function existeCodeClasse($code, $classes)
+{
     foreach ($classes as $classe) {
         if (strtolower(trim($classe["code"])) == strtolower(trim($code))) {
             return true; // trouvé
@@ -369,7 +392,8 @@ function existeCodeClasse($code, $classes) {
     return false; // pas trouvé
 }
 
-function existelibelleClasse($libelle, $classes) {
+function existelibelleClasse($libelle, $classes)
+{
     foreach ($classes as $classe) {
         if (strtolower(trim($classe["libelle"])) == strtolower(trim($libelle))) {
             return true; // trouvé
@@ -378,7 +402,8 @@ function existelibelleClasse($libelle, $classes) {
     return false; // pas trouvé
 }
 
-function existeTelephoneEtudiant($telephone, $etudiants,$id) {
+function existeTelephoneEtudiant($telephone, $etudiants, $id)
+{
     foreach ($etudiants as $etudiant) {
         if ($etudiant["id"] != $id && strtolower(trim($etudiant["telephone"])) == strtolower(trim($telephone))) {
             return true; // trouvé
@@ -387,7 +412,8 @@ function existeTelephoneEtudiant($telephone, $etudiants,$id) {
     return false; // pas trouvé
 }
 
-function existeEmailEtudiant($email, $etudiants,$id) {
+function existeEmailEtudiant($email, $etudiants, $id)
+{
     foreach ($etudiants as $etudiant) {
         if ($etudiant["id"] != $id && strtolower(trim($etudiant["email"])) == strtolower(trim($email))) {
             return true; // trouvé
@@ -396,11 +422,12 @@ function existeEmailEtudiant($email, $etudiants,$id) {
     return false; // pas trouvé
 }
 
-function filterEtudiantsByClasse($etudiants, $idClasse) {
+function filterEtudiantsByClasse($etudiants, $idClasse)
+{
     if (empty($idClasse) || $idClasse == 0) {
         return $etudiants; // si aucun ID n'est fourni, on retourne tous les étudiants
     }
-      // Vérifier que la classe existe
+    // Vérifier que la classe existe
     $classe = findClasseById($idClasse);
     if (!$classe) {
         return []; // si la classe n'existe pas, on retourne un tableau vide
@@ -416,7 +443,8 @@ function filterEtudiantsByClasse($etudiants, $idClasse) {
     return $filtered;
 }
 
-function findFiliereById($id) {
+function findFiliereById($id)
+{
     $filieres = findAllFilieres(); // récupère toutes les filières
 
     foreach ($filieres as $filiere) {
@@ -428,7 +456,8 @@ function findFiliereById($id) {
     return null; // si l'ID n'existe pas
 }
 
-function findNiveauById($id) {
+function findNiveauById($id)
+{
     $niveaux = findAllNiveaux(); // récupère toutes les filières
 
     foreach ($niveaux as $niveau) {
@@ -440,7 +469,8 @@ function findNiveauById($id) {
     return null; // si l'ID n'existe pas
 }
 
-function filterClasseByFiliere($classes, $idFiliere) {
+function filterClasseByFiliere($classes, $idFiliere)
+{
     // Si aucun ID n’est fourni, on retourne toutes les classes
     if (empty($idFiliere) || $idFiliere == 0) {
         // return $classes;
@@ -464,7 +494,8 @@ function filterClasseByFiliere($classes, $idFiliere) {
     return $filtered;
 }
 
-function filterClasseByNiveau($classes, $idNiveau) {
+function filterClasseByNiveau($classes, $idNiveau)
+{
     // Si aucun ID n’est fourni, on retourne toutes les classes
     if (empty($idNiveau) || $idNiveau == 0) {
         // return $classes;

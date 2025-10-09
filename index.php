@@ -425,7 +425,8 @@ define("WEBROOT", "http://localhost:8000/");
         } elseif ($page == "details") {
             $id = $_REQUEST["id"]; // récupère l'id envoyé dans le bouton
             $etudiant = findEtudiantById($id); // ta fonction de recherche par id
-
+            $filiere=findFiliereById($id);
+            $niveau=findNiveauById($id);
             $classes = findAllClasses();
             $niveaux = findAllNiveaux();
             $filieres = findAllFilieres();
@@ -435,30 +436,18 @@ define("WEBROOT", "http://localhost:8000/");
             $idFiliere = $_GET["id"] ?? 0;
             $classes = findAllClasses();
             $filieres = findAllFilieres();
+            $niveaux = findAllNiveaux(); // récupère tous les niveaux
             $libelleFiliere = findFiliereLibelleById($idFiliere, $filieres);
-
-            if (empty($libelleFiliere) && $idFiliere > 0) {
-                echo "<h2>La filière avec l'ID $idFiliere n'existe pas.</h2>";
-                $classes = [];
-            } else {
-                $classes = filterClasseByFiliere($classes, $idFiliere);
-            }
+            $classes = filterClasseByFiliere($classes, $idFiliere);
 
             require_once("classefiliere.php");
-        } 
-        elseif ($page == "classeniveau") {
+        } elseif ($page == "classeniveau") {
             $idNiveau = $_GET["id"] ?? 0;
             $classes = findAllClasses();
             $niveaux = findAllNiveaux();
+            $filieres = findAllFilieres();
             $libelleNiveau = findNiveauLibelleById($idNiveau, $niveaux);
-
-            if (empty($libelleNiveau) && $idNiveau > 0) {
-                echo "<h2>Le Niveau avec l'ID $idNiveau n'existe pas.</h2>";
-                $classes = [];
-            } else {
-                $classes = filterClasseByNiveau($classes, $idNiveau);
-            }
-
+            $classes = filterClasseByNiveau($classes, $idNiveau);
             require_once("classeniveau.php");
         } else {
             echo "<h1> Page Introuvable </h1>";

@@ -38,10 +38,12 @@ if (session_status() == PHP_SESSION_NONE) {
                     <i class="fas fa-chart-line"></i>
                     <span>Niveau</span>
                 </a>
-                <div class="menu-item">
-                    <i class="fas fa-comment"></i>
-                    <span>Classe</span>
-                </div>
+                <a href="index.php?page=listclasse">
+                    <div class="menu-item">
+                        <i class="fas fa-comment"></i>
+                        <span>Classe</span>
+                    </div>
+                </a>
 
                 <a href="index.php?page=listetudiant" class="menu-item">
                     <i class="fa-solid fa-users"></i>
@@ -76,17 +78,17 @@ if (session_status() == PHP_SESSION_NONE) {
             <p class="sous_titre"><?= $_SESSION["userConnected"]["prenom"] ?? "" ?></p>
             <div style="  margin-top: 05%;">
                 <div class="P3">
-                    <div class="card1">
-                        <div class="Gcontainer">
-                            <h2 style="color:brown">
-                                Étudiants de la classe :
-                                <strong><?= $classe["libelle"] ?? "Classe inconnue" ?></strong>
-                            </h2>
-                            <a href="index.php?page=listclasse"><button>Listes</button></a>
-                            <?php if (empty($etudiants)): ?>
-                                <p>Aucun étudiant trouvé pour cette classe.</p>
-                            <?php else: ?>
-                                <table border="1" cellpadding="5" cellspacing="0" width="100%">
+                    <div class="table-container">
+                        <h2 style="color:brown">
+                            Étudiants de la classe :
+                            <strong><?= $classe["libelle"] ?? "Classe inconnue" ?></strong>
+                        </h2>
+                        <a href="index.php?page=listclasse"><button class="btfiltre">Listes</button></a>
+                        <?php if (empty($etudiants)): ?>
+                            <p>Aucun étudiant trouvé pour cette classe.</p>
+                        <?php else: ?>
+                            <table>
+                                <thead>
                                     <tr>
                                         <th>Matricule</th>
                                         <th>Nom</th>
@@ -94,6 +96,8 @@ if (session_status() == PHP_SESSION_NONE) {
                                         <th>Adresse</th>
                                         <th>Téléphone</th>
                                     </tr>
+                                </thead>
+                                <tbody>
                                     <?php foreach ($etudiants as $e): ?>
                                         <tr>
                                             <td><?= $e["matricule"] ?></td>
@@ -103,39 +107,40 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <td><?= $e["telephone"] ?></td>
                                         </tr>
                                     <?php endforeach; ?>
-                                </table>
-                            <?php endif; ?>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                <?php endif; ?>
+                                </tbody>
+                            </table>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 </div>

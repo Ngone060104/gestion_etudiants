@@ -19,7 +19,6 @@
       
          <ul>
         <li>Design sobre et professionnel</li>
-        <li>Responsive avec media queries</li>
         <li>HTML/CSS + PHP uniquement</li>
       </ul>
     </div>

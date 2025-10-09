@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="P1">
             <!-- Logo en haut -->
             <div class="top">
-                <img src="./Logo moderne de SocialTrack (1).png" alt="Logo SocialTrack" class="logo-img">
+                <img src="./221logo.jpg" alt="Logo SocialTrack" class="logo-img">
             </div>
 
             <!-- Menu principal centré verticalement -->
@@ -83,7 +83,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <!-- Formulaire Classe adapté au dashboard -->
                         <!-- Section Liste des Classes -->
                         <?php if (empty($classes)): ?>
-                            <p>Aucune filiere trouvée pour cette classe.</p>
+                            <p>Aucune classe trouvée pour cette filiere.</p>
                         <?php else: ?>
                             <div class="card-list">
                                 <h2 style="color:brown">Liste des classes de la filière :
@@ -104,35 +104,17 @@ if (session_status() == PHP_SESSION_NONE) {
                                                     <th>Libellé</th>
                                                     <th>Filière</th>
                                                     <th>Niveau</th>
-                                                    <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                
                                                 <?php foreach ($classes as $c): ?>
                                                     <tr>
                                                         <td><?= $c["code"] ?></td>
                                                         <td><?= $c["libelle"] ?></td>
                                                         <td><?= findFiliereLibelleById($c["filiere_id"] ?? $c["filiere"], $filieres) ?? "" ?></td>
-                                                        <!-- <td><?= findNiveauLibelleById($c["niveau_id"] ?? $c["niveau"], $niveaux) ?? "" ?></td> -->
-                                                        <td>
-                                                            <form action="index.php?page=modifierclasse" method="post" style="display:inline;">
-                                                                <input type="hidden" name="id" value="<?= $c['id'] ?>">
-                                                                <button class="mod" type="submit" name="edit">
-                                                                    <i class="fa-solid fa-pen"></i>
-                                                                </button>
-                                                            </form>
-
-                                                            <form action="index.php?page=listclasse" method="post" style="display:inline;">
-                                                                <input type="hidden" name="delete_id" value="<?= $c['id'] ?>">
-                                                                <button class="sup" type="submit" name="delete">
-                                                                    <i class="fa-solid fa-trash"></i>
-                                                                </button>
-                                                            </form>
-
-                                                            <a href="index.php?page=classeetudiants&id=<?= $c['id'] ?>" class="view">
-                                                                <i class="fa-solid fa-eye"></i>
-                                                            </a>
-                                                        </td>
+                                                        <td><?= findNiveauLibelleById($c["niveau_id"] ?? $c["niveau"], $niveaux) ?? "" ?></td>
+                                                 
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

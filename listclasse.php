@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <i class="fas fa-calendar"></i>
                     <span>Filière</span>
                 </a>
-                <a href="index.php?page=filiere" class="menu-item">
+                <a href="index.php?page=niveau" class="menu-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Niveau</span>
                 </a>

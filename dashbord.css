@@ -186,7 +186,7 @@ h4 {
     background-color: white;
     margin: 05px;
     border-radius: 10px;
-    padding: 05px;
+    padding: 0px;
 
 }
 
@@ -201,7 +201,7 @@ h4 {
 .content h2 {
     font-size: 24px;
     margin-bottom: 10px;
-   color: #4988F4;
+   color: black;
 }
 
 /* Cartes */
@@ -226,6 +226,7 @@ h4 {
     text-align: center;
     transition: transform 0.3s;
 }
+
 
 .card:hover {
     transform: translateY(-5px);
