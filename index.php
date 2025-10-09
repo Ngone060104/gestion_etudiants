@@ -38,11 +38,11 @@ define("WEBROOT", "http://localhost:8000/");
         if ($page == "dashbord") {
             require_once("dashbord.php");
         } elseif ($page == "logout") {
-            session_unset();
-            session_destroy();
+            session_unset(); //Supprime toutes les variables de session actuellement stockées.
+            session_destroy();// Détruit la session elle-même
             header("location:" . WEBROOT);
         } elseif ($page == "filiere") {
-            $filieres = findAllFilieres();
+            $filieres = findAllFilieres(); //recuperation de tous les filieres du fichier 
             // Variable pour le message d'erreur
             $errorlibellefiliere = "";
             // Traitement du formulaire

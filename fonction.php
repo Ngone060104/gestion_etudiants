@@ -302,8 +302,11 @@ function hello(): void
 // Nombre de filières
 function getNombreFilieres(): int
 {
-    $datas = jsonToArray();
+    $datas = jsonToArray();// On récupère toutes les données du fichier JSON sous forme de tableau associatif
     return isset($datas["filieres"]) ? count($datas["filieres"]) : 0;
+    // Si la clé "filieres" existe dans $datas, on retourne le nombre de filières
+    // Sinon, on retourne 0 pour éviter une erreur
+    //compter le nombre total de filières enregistrées dans mon fichier JSON.
 }
 
 // Nombre de niveaux
