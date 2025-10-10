@@ -228,6 +228,7 @@ form {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
+  
 }
 
 /*  Tableau principal */
@@ -267,7 +268,7 @@ tr:hover {
 td {
   padding: 10px;
    text-align: center;
-  color: #333;
+  color:black;
 }
 
 /*  Boutons d’action */
@@ -303,8 +304,7 @@ td {
 /* Icônes */
 .icone3 {
   display: flex;
- flex-direction: column;
-  gap: 8px;
+ justify-content: space-evenly;
 }
 
 
