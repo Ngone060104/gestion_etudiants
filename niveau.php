@@ -120,7 +120,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                 <form action="index.php" method="get">
                                                     <input type="hidden" name="page" value="classeniveau">
                                                     <input type="hidden" name="id" value="<?= $niveau['id'] ?>">
-                                                    <button class="view" type="submit" title="Voir les classes">
+                                                    <button class="view" type="submit">
                                                        <i class="fa-solid fa-eye"></i>
                                                     </button>
                                                 </form>
@@ -128,7 +128,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                                 <!-- Bouton supprimer -->
                                                 <form action="index.php?page=niveau" method="post">
                                                     <input type="hidden" name="delete_id" value="<?= $niveau['id'] ?>">
-                                                    <button class="sup" type="submit" name="delete" title="Supprimer">
+                                                    <button class="sup" type="submit" name="delete">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </form>

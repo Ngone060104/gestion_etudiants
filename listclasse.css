@@ -99,8 +99,9 @@
 }
 
 .menu-item:hover {
-    background: #0099ff;
+    background: white;
     transform: translateX(5px);
+    color: #007bff;
 }
 
 #bell {
@@ -194,15 +195,7 @@ form {
 }
 
 /* Style Dashboard pour Formulaire Classe */
-.Gcontainer {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 95%;
-    margin: 10px auto;
-    height: 70vh;
-}
+
 
 .Filtres {
     display: flex;
@@ -234,6 +227,8 @@ form {
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 400px;
+    
 }
 
 .table-container h2 {

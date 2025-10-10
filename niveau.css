@@ -99,8 +99,9 @@
 }
 
 .menu-item:hover {
-    background: #0099ff;
+    background: white;
     transform: translateX(5px);
+    color: #007bff;
 }
 a{
     text-decoration: none;
@@ -318,7 +319,6 @@ table {
 
 .table-niveau td {
   padding: 10px 12px;
-  border-bottom: 1px solid #ddd;
   font-size: 15px;
   text-align: center;
 }

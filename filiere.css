@@ -86,21 +86,14 @@
     cursor: pointer;
 }
 
-/* .menu-item i {
-    font-size: 20px;
-}
-
-.menu-item:hover {
-    background-color: #134484;
-    color: white;
-} */
 .menu-item {
     transition: background 0.3s, transform 0.3s;
 }
 
 .menu-item:hover {
-    background: #0099ff;
+    background: white;
     transform: translateX(5px);
+    color: #007bff;
 }
 
 #bell {
@@ -323,17 +316,8 @@ input {
   color: black;
 }
 
-/* Image ronde */
-.img-filiere {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-.table-filiere tbody tr:hover .img-filiere {
-  transform: rotate(10deg) scale(1.1);
-}
+
 
 /* Boutons d’action */
 .actions button {
@@ -342,7 +326,6 @@ input {
   cursor: pointer;
   font-size: 18px;
   margin: 0 5px;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .btn-view {
@@ -353,14 +336,6 @@ input {
   color: brown;
 }
 
-.btn-delete:hover {
-  transform: scale(1.2);
-  color: red;
-}
-.btn-view:hover{
-     transform: scale(1.2);
-  color: gray;
-}
 /* Animation d’apparition */
 @keyframes fadeIn {
   from {

@@ -112,7 +112,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <td class="actions">
                       <form action="index.php?page=filiere" method="post" style="display:inline;">
                         <input type="hidden" name="delete_id" value="<?= $filiere['id'] ?>">
-                        <button class="btn-delete" type="submit" name="delete" title="Supprimer">
+                        <button class="btn-delete" type="submit" name="delete" >
                           <i class="fa-solid fa-trash"></i>
                         </button>
                       </form>
@@ -120,7 +120,7 @@ if (session_status() == PHP_SESSION_NONE) {
                       <form action="index.php" method="get" style="display:inline;">
                         <input type="hidden" name="page" value="classefiliere">
                         <input type="hidden" name="id" value="<?= $filiere['id'] ?>">
-                        <button class="btn-view" type="submit" title="Voir les classes">
+                        <button class="btn-view" type="submit" >
                          <i class="fa-solid fa-eye"></i>
                         </button>
                       </form>

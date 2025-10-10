@@ -99,8 +99,9 @@
 }
 
 .menu-item:hover {
-    background: #0099ff;
+    background: white;
     transform: translateX(5px);
+    color: #007bff;
 }
 
 #bell {
