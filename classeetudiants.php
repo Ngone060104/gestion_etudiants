@@ -95,6 +95,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                         <th>Prénom</th>
                                         <th>Adresse</th>
                                         <th>Téléphone</th>
+                                        <th>Email</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -105,6 +106,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <td><?= $e["prenom"] ?></td>
                                             <td><?= $e["adresse"] ?></td>
                                             <td><?= $e["telephone"] ?></td>
+                                            <td><?= $e["email"] ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php endif; ?>

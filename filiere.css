@@ -291,10 +291,6 @@ input {
     height: 60vh;
     margin: 08px;
     padding: 03px;
-      /*  Empêche le container de s’étirer trop */
-  max-height: 500px; /* tu peux ajuster selon ta page */
-  overflow-y: auto; /* permet de scroller à l’intérieur */
-  transition: all 0.3s ease;
 }
 
 .table-filiere {

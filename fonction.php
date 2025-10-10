@@ -385,20 +385,20 @@ function existeFiliere($libelle, $filieres)
     return false; // pas trouvé
 }
 
-function existeCodeClasse($code, $classes)
+function existeCodeClasse($code, $classes,$id)
 {
     foreach ($classes as $classe) {
-        if (strtolower(trim($classe["code"])) == strtolower(trim($code))) {
+        if ($classe["id"] != $id && strtolower(trim($classe["code"])) == strtolower(trim($code))) {
             return true; // trouvé
         }
     }
     return false; // pas trouvé
 }
 
-function existelibelleClasse($libelle, $classes)
+function existelibelleClasse($libelle, $classes,$id)
 {
     foreach ($classes as $classe) {
-        if (strtolower(trim($classe["libelle"])) == strtolower(trim($libelle))) {
+        if ($classe["id"] != $id && strtolower(trim($classe["libelle"])) == strtolower(trim($libelle))) {
             return true; // trouvé
         }
     }

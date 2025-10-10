@@ -61,14 +61,14 @@
     ],
     "classes": [
         {
-            "id": 1,
+            "id": "1",
             "code": "INF-L1-E",
             "libelle": "Informatique Licence 1 E",
             "filiere": "6",
             "niveau": "1"
         },
         {
-            "id": 2,
+            "id": "2",
             "code": "GC-L3-A",
             "libelle": "G\u00e9nie Comptabilit\u00e9 Licence 3 A",
             "filiere": "7",
@@ -97,9 +97,8 @@
             "prenom": "Diop",
             "telephone": "770102030",
             "email": "Faby1234@gmail.com",
-            "adresse": "Bel Air",
-            "classe": "1",
-            "observation": "Étudiante sérieuse et motivée, montre un grand intérêt pour la programmation."
+            "adresse": "Parcelle",
+            "classe": "1"
         },
         "4": {
             "id": 6,
@@ -110,7 +109,6 @@
             "email": "Teddy@pro.com",
             "adresse": "Paris",
             "classe": "3"
-            
         },
         "5": {
             "id": 7,
@@ -121,7 +119,6 @@
             "email": "FaBintou123@gmail.com",
             "adresse": "M\u00e9dina",
             "classe": "4"
-            
         }
     }
 }

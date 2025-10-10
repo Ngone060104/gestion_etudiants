@@ -112,6 +112,7 @@ define("WEBROOT", "http://localhost:8000/");
             }
             require_once("niveau.php");
         } elseif ($page == "classe") {
+            // $idClasse = $_REQUEST["id"]; // ID de l'étudiant modifié
             $classes = findAllClasses();
             $filieres = findAllFilieres(); // récupérer toutes les filières
             $niveaux  = findAllNiveaux();  // récupérer tous les niveaux
@@ -130,14 +131,14 @@ define("WEBROOT", "http://localhost:8000/");
                 if (trim($_REQUEST["code"]) == "") {
                     $errorCodeClasse = "Le code est obligatoire";
                     $verification = false;
-                } elseif (existeCodeClasse($code, $classes)) {
+                } elseif (existeCodeClasse($code, $classes,$idClasse)) {
                     $errorCodeClasse = "Ce code existe déjà";
                     $verification = false;
                 }
                 if (trim($_REQUEST["libelle"]) == "") {
                     $errorLibelleClasse = "Le libelle est obligatoire";
                     $verification = false;
-                } elseif (existelibelleClasse($libelle, $classes)) {
+                } elseif (existelibelleClasse($libelle, $classes,$idClasse)) {
                     $errorLibelleClasse = "Ce libelle existe déjà";
                     $verification = false;
                 }
@@ -178,6 +179,7 @@ define("WEBROOT", "http://localhost:8000/");
             }
             require_once("listclasse.php");
         } elseif ($page == "modifierclasse") {
+            $idClasse = $_REQUEST["id"]; // ID de l'étudiant modifié
             $filieres = findAllFilieres();
             $niveaux = findAllNiveaux();
             $classes = findAllClasses();
@@ -205,15 +207,15 @@ define("WEBROOT", "http://localhost:8000/");
                 if (trim($_REQUEST["code"]) == "") {
                     $errorCodeClasse = "Le code est obligatoire";
                     $verification = false;
-                } elseif (existeCodeClasse($code, $classes)) {
-                    $errorCodeClasse = "Ce code existe déjà";
+                } elseif (existeCodeClasse($code, $classes,$idClasse)) {
+                    $errorCodeClasse = "Ce code existe est déjà utilisé par une autre classe";
                     $verification = false;
                 }
                 if (trim($_REQUEST["libelle"]) == "") {
                     $errorLibelleClasse = "Le libelle est obligatoire";
                     $verification = false;
-                } elseif (existelibelleClasse($libelle, $classes)) {
-                    $errorLibelleClasse = "Ce libelle existe déjà";
+                } elseif (existelibelleClasse($libelle, $classes,$idClasse)) {
+                    $errorLibelleClasse = "Ce libelle est déjà utilisé par une autre classe.";
                     $verification = false;
                 }
                 if (trim($_REQUEST["filiere_id"]) == "") {

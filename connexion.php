@@ -30,14 +30,14 @@
       <form action="" method="post" class="formconnexion">
         <div class="form-group">
           <label for="email">Email :</label>
-          <input type="email" id="email" name="email" placeholder="Entrez votre email">
+          <input type="email" id="email" name="email" placeholder="Entrez votre email" value="<?=$user["email"]    ??""     ?>">
           <p class="error"> <?= $errorEmail ?? "" ?></p>
           <p></p>
         </div>
 
         <div class="form-group">
           <label for="password">Mot de passe :</label>
-          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" value="<?=$user["password"] ?? ""?>">
           <p class="error"> <?= $errorPassword ?? "" ?></p>
         </div>
 

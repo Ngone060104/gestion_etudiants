@@ -93,7 +93,7 @@ require_once("fonction.php");
 
                                 <div class="info-container">
                                     <div class="info-left">
-                                        <div class="info-item"><strong>Nom :</strong> <?= $etudiant['matricule'] ?> </div>
+                                        <div class="info-item"><strong>Matricule :</strong> <?= $etudiant['matricule'] ?> </div>
                                         <div class="info-item"><strong>Nom :</strong> <?= $etudiant['nom'] ?> </div>
                                         <div class="info-item"><strong>Prénom :</strong><?= $etudiant['prenom'] ?></div>
                                         <div class="info-item"><strong>Téléphone :</strong> <?= $etudiant['telephone'] ?></div>
