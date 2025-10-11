@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once("fonction.php");
 define("WEBROOT", "http://localhost:8000/");
-//   session_unset();
+//  session_unset();
 // $classe=findAllClasses();
 // $filiere=findAllFilieres();
 // $niveau=findAllNiveaux();
@@ -36,6 +36,10 @@ define("WEBROOT", "http://localhost:8000/");
         }
 
         if ($page == "dashbord") {
+        $etudiants=getNombreEtudiants();
+        $classes=getNombreClasses();
+        $niveaux=getNombreNiveaux();
+        $filieres=getNombreFilieres();
             require_once("dashbord.php");
         } elseif ($page == "logout") {
             session_unset(); //Supprime toutes les variables de session actuellement stockées.

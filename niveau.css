@@ -36,43 +36,32 @@
     border-top-right-radius: 20px;
 }
 
-/* Logo en haut */
 .top {
     display: flex;
     justify-content: flex-start;
-    /* logo à gauche */
     align-items: center;
     padding: 10px;
-    /* petit padding pour que le logo ne colle pas au bord */
 }
 
 .logo-img {
     width: 50px;
-    /* ajuste selon ton logo */
     border-radius: 50%;
 }
-
-/* Menu principal centré */
 .menu {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* prend tout l'espace restant */
     justify-content: center;
-    /* centré verticalement */
     gap: 05px;
     margin-top: -70%;
 
 }
-
-/* Menu bas (Paramètres & Déconnexion) */
 .menu-bottom {
     display: flex;
     flex-direction: column;
     gap: 05px;
 }
 
-/* Chaque item (icône + texte côte à côte) */
 .menu-item {
     display: flex;
     flex-direction: row;
@@ -86,14 +75,6 @@
     cursor: pointer;
 }
 
-/* .menu-item i {
-    font-size: 20px;
-}
-
-.menu-item:hover {
-    background-color: #134484;
-    color: white;
-} */
 .menu-item {
     transition: background 0.3s, transform 0.3s;
 }
@@ -151,12 +132,9 @@ a{
 
 .img2 {
     width: 42px;
-    /* même largeur et hauteur */
     height: 42px;
     border-radius: 50%;
-    /* rend le carré circulaire */
     object-fit: cover;
-    /* recadre pour éviter l’étirement */
     display: block;
     margin-left: 80%;
     margin-top: -03%;
@@ -228,14 +206,12 @@ input {
 .d1 {
     display: flex;
     gap: 10px;
-    /* espace entre les champs */
     padding: 05px;
     margin-top: -01%;
 }
 
 .d1 div {
     flex: 1;
-    /* chaque input prend la même largeur */
 }
 
 .bt1 {

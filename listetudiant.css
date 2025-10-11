@@ -1,7 +1,6 @@
 .Dash {
     display: flex;
     justify-content: space-between;
-
 }
 
 .P1 {
@@ -35,44 +34,33 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-
-/* Logo en haut */
 .top {
     display: flex;
     justify-content: flex-start;
-    /* logo à gauche */
     align-items: center;
     padding: 10px;
-    /* petit padding pour que le logo ne colle pas au bord */
 }
 
 .logo-img {
     width: 50px;
-    /* ajuste selon ton logo */
    border-radius: 50%;
 }
 
-/* Menu principal centré */
 .menu {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* prend tout l'espace restant */
     justify-content: center;
-    /* centré verticalement */
     gap: 05px;
     margin-top: -70%;
 
 }
-
-/* Menu bas (Paramètres & Déconnexion) */
 .menu-bottom {
     display: flex;
     flex-direction: column;
     gap: 05px;
 }
 
-/* Chaque item (icône + texte côte à côte) */
 .menu-item {
     display: flex;
     flex-direction: row;
@@ -86,14 +74,6 @@
     cursor: pointer;
 }
 
-/* .menu-item i {
-    font-size: 20px;
-}
-
-.menu-item:hover {
-    background-color: #134484;
-    color: white;
-} */
 .menu-item {
     transition: background 0.3s, transform 0.3s;
 }
@@ -149,12 +129,9 @@
 
 .img2 {
     width: 42px;
-    /* même largeur et hauteur */
     height: 42px;
     border-radius: 50%;
-    /* rend le carré circulaire */
     object-fit: cover;
-    /* recadre pour éviter l’étirement */
     display: block;
     margin-left: 80%;
     margin-top: -03%;
@@ -194,7 +171,6 @@ form {
     font-size: 08px;
 }
 
-/* Style Dashboard pour Formulaire Classe */
 .Gcontainer {
     background-color: #ffffff;
     padding: 10px;
@@ -222,7 +198,6 @@ form {
     padding: 05px;
 }
 
-/*  Conteneur du tableau */
 .table-container {
   background-color: #fff;
   padding: 20px;
@@ -231,8 +206,6 @@ form {
   overflow-x: auto;
   
 }
-
-/*  Tableau principal */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -246,7 +219,6 @@ table {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* En-têtes */
 th {
   background-color:  #007bff;
   color: white;
@@ -257,7 +229,6 @@ th {
    text-align: center;
 }
 
-/* Lignes */
 tr {
   background-color: white;
 }

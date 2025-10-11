@@ -143,12 +143,9 @@
 
 .img2 {
     width: 42px;
-    /* même largeur et hauteur */
     height: 42px;
     border-radius: 50%;
-    /* rend le carré circulaire */
     object-fit: cover;
-    /* recadre pour éviter l’étirement */
     display: block;
     margin-left: 80%;
     margin-top: -03%;
@@ -187,7 +184,6 @@ form {
 ::placeholder {
     font-size: 08px;
 }
-/* Style Dashboard pour Formulaire Classe */
 .card-form {
   background-color: #ffffff;
   padding: 25px;

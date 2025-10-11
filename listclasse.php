@@ -105,18 +105,18 @@ if (session_status() == PHP_SESSION_NONE) {
                                         <td class="actions">
                                             <form action="index.php?page=modifierclasse" method="post">
                                                 <input type="hidden" name="id" value="<?= $classe['id'] ?>">
-                                                <button class="mod"><i class="fa-solid fa-pen" id="modifier"></i></button>
+                                                <button class="mod"><i class="fa-solid fa-pen" id="modifier" title="modifier"></i></button>
                                             </form>
 
                                             <form action="index.php?page=listclasse" method="post">
                                                 <input type="hidden" name="delete_id" value="<?= $classe['id'] ?>">
-                                                <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="supprimer"></i></button>
+                                                <button class="sup" type="submit" name="delete"><i class="fa-solid fa-trash" id="supprimer" title="Supprimer"></i></button>
                                             </form>
                                 
                                             <form action="index.php" method="get">
                                                 <input type="hidden" name="page" value="classeetudiants">
                                                 <input type="hidden" name="id" value="<?= $classe['id'] ?>">
-                                                <button class="voir" type="submit">
+                                                <button class="voir" type="submit" title="Voire Listes">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </button>
                                             </form>
