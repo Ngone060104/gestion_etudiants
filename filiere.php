@@ -70,7 +70,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="P2">
       <input type="text"
         style="margin-top: 1%; margin-left: 05%; border: 1px solid ghostwhite; padding: 05px; border-radius: 50px; width: 30%;height: 15px;"
-        placeholder="Search" class="recherche">
+        placeholder="recherche" class="recherche">
       <i class="fas fa-bell" id="bell"></i>
       <img src="https://picsum.photos/300/200" class="img2">
       <h4>Bienvenue</h4>
@@ -84,7 +84,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <div class="d1">
                 <div class="input1">
                   <label for="">Libelle</label>
-                  <input type="text" placeholder="libelle " name="libelle">
+                  <input type="text" placeholder="libelle " name="libelle" class="filiere">
                   <!-- Message d'erreur -->
                   <p class="errorlibellefiliere"><?= $errorlibellefiliere ?? "" ?></p>
                 </div>

@@ -126,7 +126,6 @@ define("WEBROOT", "http://localhost:8000/");
             $libelle = trim($_REQUEST["libelle"] ?? "");
             $filiere_id = $_REQUEST["filiere_id"] ?? "";
             $niveau_id = $_REQUEST["niveau_id"] ?? "";
-
             $verification = "";
 
 
@@ -167,7 +166,6 @@ define("WEBROOT", "http://localhost:8000/");
                     exit;
                 }
             }
-
             require_once("formclasse.php");
         } elseif ($page == "listclasse") {
             $classes = findAllClasses();

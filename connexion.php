@@ -43,7 +43,6 @@
 
         <button type="submit" class="btn" name="connect">Se connecter</button>
         <p class="error"> <?= $errorLogin ?? "" ?></p>
-        <p></p>
       </form>
     </div>
   </div>
